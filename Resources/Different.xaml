@@ -1,0 +1,461 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:common="clr-namespace:html_exctractor.Common"
+                    xmlns:model="clr-namespace:html_exctractor.Model"
+                    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Style TargetType="{x:Type ListBoxItem}"
+           x:Key="MenuMaterialDesignToolToggleListBoxItem"
+           BasedOn="{StaticResource MaterialDesignListBoxItem}">
+        <Setter Property="Height"
+                Value="60" />
+        <Setter Property="Width"
+                Value="60" />
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+
+        <Style.Triggers>
+            <Trigger Property="IsSelected"
+                     Value="True">
+                <Setter Property="FontWeight"
+                        Value="Bold" />
+                <Setter Property="Background"
+                        Value="{DynamicResource menu_item_selected_color_background}" />
+                <Setter Property="Foreground"
+                        Value="{DynamicResource menu_icon_selected_tint_color}" />
+            </Trigger>
+            <Trigger Property="IsSelected"
+                     Value="False">
+                <Setter Property="FontWeight"
+                        Value="Bold" />
+                <Setter Property="Background"
+                        Value="{DynamicResource menu_item_unselected_color_background}" />
+                <Setter Property="Foreground"
+                        Value="{DynamicResource menu_icon_unselected_tint_color}" />
+            </Trigger>
+        </Style.Triggers>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius"
+                        Value="100" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style TargetType="{x:Type ListBoxItem}"
+           x:Key="FieldListBoxItem"
+           BasedOn="{StaticResource MaterialDesignListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border Background="{DynamicResource chip_background_color}"
+                            Padding="8 4"
+                            Margin="0 4 2 4"
+                            BorderBrush="Transparent"
+                            CornerRadius="10">
+                        <TextBlock FontSize="10"
+                                   VerticalAlignment="Center"
+                                   FontWeight="Light"
+                                   TextTrimming="CharacterEllipsis"
+                                   MaxWidth="200"
+                                   FontFamily="{DynamicResource MaterialDesignFont}"
+                                   Foreground="#fff"
+                                   Text="{Binding Path=Value}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ItemsPanelTemplate x:Key="HorizontalTemplateContainer">
+        <WrapPanel IsItemsHost="True"
+                   Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+
+    <ItemsPanelTemplate x:Key="GridTemplateContainer">
+        <WrapPanel IsItemsHost="True" />
+    </ItemsPanelTemplate>
+
+    <Style x:Key="FieldsListBox"
+           TargetType="{x:Type ListBox}">
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource FieldListBoxItem}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Disabled" />
+        <Setter Property="ItemsPanel"
+                Value="{StaticResource HorizontalTemplateContainer}" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="Background"
+                Value="Transparent" />
+    </Style>
+
+    <Style x:Key="DefaultContextMenu"
+           TargetType="ContextMenu">
+        <Setter  Property="Foreground"
+                 Value="{DynamicResource text_main_color}" />
+        <Setter  Property="FontFamily"
+                 Value="{DynamicResource MaterialDesignFont}" />
+        <Setter  Property="FontWeight"
+                 Value="Medium" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuBase}">
+                    <md:Card UniformCornerRadius="10"
+                             Margin="8"
+                             MinWidth="150"
+                             md:ShadowAssist.ShadowDepth="Depth1"
+                             Background="{DynamicResource main_first_color}">
+                        <ItemsPresenter x:Name="ItemsPresenter"
+                                        KeyboardNavigation.DirectionalNavigation="Cycle"
+                                        Grid.IsSharedSizeScope="True"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                        KeyboardNavigation.TabNavigation="Cycle" />
+                    </md:Card>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type ListBoxItem}"
+           x:Key="RulesListBoxItem"
+           BasedOn="{StaticResource MaterialDesignListBoxItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Grid>
+                        <md:Card BorderBrush="Transparent"
+                                 Margin="8 8 0 8"
+                                 MaxWidth="700"
+                                 md:ShadowAssist.ShadowDepth="Depth0"
+                                 Background="{DynamicResource rule_item_backround_color}"
+                                 BorderThickness="1"
+                                 UniformCornerRadius="20">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Ellipse Fill="{DynamicResource main_second_color}"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         Width="40"
+                                         Margin="16"
+                                         Height="40" />
+                                <TextBlock Text="{Binding Name ,Converter={StaticResource FirstLetterSubstringConverter}}"
+                                           FontSize="16"
+                                           Foreground="{DynamicResource rule_avatar_text_color}"
+                                           FontWeight="Medium"
+                                           FontFamily="{StaticResource MaterialDesignFont}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center" />
+                                <StackPanel Grid.Column="1"
+                                            Grid.RowSpan="2"
+                                            Margin="16 16"
+                                            Orientation="Vertical">
+                                    <TextBlock FontSize="14"
+                                               FontWeight="Bold"
+                                               TextWrapping="Wrap"
+                                               Foreground="{DynamicResource text_main_color}"
+                                               FontFamily="{StaticResource MaterialDesignFont}"
+                                               Text="{Binding Name}" />
+                                    <TextBlock FontSize="10"
+                                               Margin="0 8 0 0"
+                                               FontWeight="Light"
+                                               TextWrapping="Wrap"
+                                               Foreground="{DynamicResource text_main_color}"
+                                               FontFamily="{StaticResource MaterialDesignFont}"
+                                               Text="{Binding CreationDate}" />
+                                    <TextBlock FontSize="12"
+                                               Margin="0 2 0 4"
+                                               FontWeight="Regular"
+                                               TextWrapping="Wrap"
+                                               Foreground="{DynamicResource text_link_color}"
+                                               FontFamily="{StaticResource MaterialDesignFont}">
+                                        <Hyperlink NavigateUri="{Binding GeneralUrl}">
+                                            <Run Text="{Binding GeneralUrl, Mode=OneWay}" />
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <ListBox Style="{StaticResource FieldsListBox}"
+                                             ItemsSource="{Binding Fields}" />
+                                </StackPanel>
+                                <Button Grid.Column="2"
+                                        Grid.Row="0"
+                                        VerticalAlignment="Top"
+                                        Margin="8"
+                                        Background="Transparent"
+                                        md:RippleAssist.Feedback="{DynamicResource rule_item_backround_color}"
+                                        BorderBrush="Transparent"
+                                        Content="{md:PackIcon Kind=DotsHorizontal, Size=30}"
+                                        Foreground="{DynamicResource text_main_color}" />
+                            </Grid>
+                        </md:Card>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Cursor"
+                Value="Hand" />
+    </Style>
+
+    <Style x:Key="ScrollBarLineButtonStyle"
+           TargetType="{x:Type RepeatButton}">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Canvas Height="18"
+                            Visibility="Hidden">
+                        <Polygon Fill="LightBlue"
+                                 Points="3,15 15,15 9,3"></Polygon>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ScrollBarLineButtonBottomStyle"
+           TargetType="{x:Type RepeatButton}">
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Canvas Height="18"
+                            Visibility="Hidden">
+                        <Polygon Fill="LightBlue"
+                                 Points="3,3 9,15 15,3"></Polygon>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ScrollBarPageButtonStyle"
+           TargetType="{x:Type RepeatButton}">
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                    <Border BorderBrush="Transparent"></Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ScrollBarThumbStyle"
+           TargetType="{x:Type Thumb}">
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="Focusable"
+                Value="False" />
+        <Setter Property="Margin"
+                Value="2 0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Rectangle Fill="{DynamicResource menu_color_background}"
+                               RadiusX="5"
+                               RadiusY="5"
+                               Margin="2"></Rectangle>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="VerticalScrollBar"
+                     TargetType="{x:Type ScrollBar}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="18" />
+                <RowDefinition Height="*" />
+                <RowDefinition MaxHeight="18" />
+            </Grid.RowDefinitions>
+
+            <RepeatButton Grid.Row="0"
+                          Height="18"
+                          Style="{StaticResource ScrollBarLineButtonStyle}"
+                          Command="ScrollBar.LineUpCommand">
+            </RepeatButton>
+            <Track Name="PART_Track"
+                   Grid.Row="1"
+                   IsDirectionReversed="True">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageUpCommand"
+                                  Style="{StaticResource ScrollBarPageButtonStyle}">
+                    </RepeatButton>
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource ScrollBarThumbStyle}">
+                    </Thumb>
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Command="ScrollBar.PageDownCommand"
+                                  Style="{StaticResource ScrollBarPageButtonStyle}">
+                    </RepeatButton>
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <RepeatButton Grid.Row="3"
+                          Height="18"
+                          Style="{StaticResource ScrollBarLineButtonBottomStyle}"
+                          Command="ScrollBar.LineDownCommand">
+            </RepeatButton>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="HistoryListBoxItemStyle"
+           TargetType="ListBoxItem"
+           BasedOn="{StaticResource MaterialDesignListBoxItem}">
+        <Setter Property="common:ListBoxAssist.ListBoxItemClickCommand"
+                Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.HistoryClickCommand}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border Name="border"
+                            MinWidth="250"
+                            MaxWidth="350"
+                            Margin="16"
+                            Padding="24"
+                            MinHeight="300"
+                            Background="{DynamicResource history_item_first_bacground_color}"
+                            CornerRadius="25">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="1.5*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="{DynamicResource history_category_title}"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       Name="text1"
+                                       TextWrapping="Wrap"
+                                       FontSize="16"
+                                       Margin="0 0 4 0"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{DynamicResource history_value_title}"
+                                       Grid.Column="1"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       TextWrapping="Wrap"
+                                       Name="text2"
+                                       FontSize="12"
+                                       Margin="0 3 0 0"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{DynamicResource rule_builder_name_hint}"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       FontSize="16"
+                                       TextWrapping="Wrap"
+                                       Grid.Row="1"
+                                       Name="text3"
+                                       Margin="0 0 4 16"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{Binding RuleName}"
+                                       Grid.Column="1"
+                                       Grid.Row="1"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       Name="text4"
+                                       FontSize="12"
+                                       TextWrapping="Wrap"
+                                       Margin="0 0 0 17"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{DynamicResource history_category_document_name_title}"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       FontSize="16"
+                                       Grid.Row="2"
+                                       Name="text5"
+                                       Margin="0 0 4 16"
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{Binding DocumentName}"
+                                       Grid.Column="1"
+                                       Grid.Row="2"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       Name="text6"
+                                       FontSize="12"
+                                       TextWrapping="Wrap"
+                                       Margin="0 3 0 16"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{DynamicResource history_category_date_title}"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       FontSize="16"
+                                       Grid.Row="3"
+                                       Name="text7"
+                                       Margin="0 0 4 16"
+                                       TextWrapping="Wrap"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                            <TextBlock Text="{Binding Date}"
+                                       Grid.Column="1"
+                                       Grid.Row="3"
+                                       Name="text8"
+                                       FontFamily="{StaticResource MaterialDesignFont}"
+                                       FontWeight="Bold"
+                                       FontSize="12"
+                                       TextWrapping="Wrap"
+                                       Margin="0 3 0 16"
+                                       Foreground="{DynamicResource history_item_first_text_color}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding LoocalFileExists}"
+                                     Value="False">
+                            <Setter Property="Background"
+                                    TargetName="border"
+                                    Value="{DynamicResource history_item_second_bacground_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text1"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text2"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text3"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text4"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text5"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text6"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text7"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                            <Setter Property="Foreground"
+                                    TargetName="text8"
+                                    Value="{DynamicResource history_item_second_text_color}" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

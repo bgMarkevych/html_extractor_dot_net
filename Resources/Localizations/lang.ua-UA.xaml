@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:html_exctractor.Resources">
+
+    <clr:String x:Key="app_name">HTML field extractor</clr:String>
+    <clr:String x:Key="splash_text">Створюйте правила за допомогою нашого конструктора правил і збирайте дані.</clr:String>
+    <clr:String x:Key="copyright_text">спеціально для Вані Гуменюка (с)</clr:String>
+
+
+    <clr:String x:Key="login_button_text">Увійти</clr:String>
+    <clr:String x:Key="login_small_title_text_part_first">Новенький тут?</clr:String>
+    <clr:String x:Key="login_small_title_text_part_second">Завести аккаунт.</clr:String>
+    <clr:String x:Key="login_big_title_text">Ласкаво просимо знову!</clr:String>
+    <clr:String x:Key="login_google_button_text">Ввійти через Google</clr:String>
+    <clr:String x:Key="login_bottom_text">Забули Ваш пароль?</clr:String>
+
+    <clr:String x:Key="enter_email_error">Введітю адресу електронної пошти в поле</clr:String>
+    <clr:String x:Key="check_email_message">Перевірте свою поштову скриньку</clr:String>
+
+    <clr:String x:Key="registration_button_text">Зареєструватися</clr:String>
+    <clr:String x:Key="registration_small_title_text">Почати швидко</clr:String>
+    <clr:String x:Key="registration_big_title_text">Завести аккаунт</clr:String>
+    <clr:String x:Key="registration_google_button_text">Зареєструватися через Google</clr:String>
+    <clr:String x:Key="registration_bottom_text">Вже є аккаунт?</clr:String>
+
+    <clr:String x:Key="email_hint_text">Ваш адреса електронної пошти</clr:String>
+    <clr:String x:Key="password_hint_text">Ваш пароль</clr:String>
+
+    <clr:String x:Key="email_validation_error_text">Електронна пошта недійсна</clr:String>
+    <clr:String x:Key="empty_field_validation_error_text">Поле пусте</clr:String>
+    <clr:String x:Key="search_hint">Пошук</clr:String>
+    <clr:String x:Key="save">Зберегти</clr:String>
+
+    <clr:String x:Key="rule_builder_title_hint">Конструктор правила</clr:String>
+    <clr:String x:Key="rule_builder_name_hint">Ім'я правила</clr:String>
+    <clr:String x:Key="rule_builder_url_hint">URL правила</clr:String>
+    <clr:String x:Key="rule_builder_pagination_hint">Разбивка на сторінки</clr:String>
+    <clr:String x:Key="rule_builder_pagination_suffics_hint">Суфікс розбивки на сторінки</clr:String>
+    <clr:String x:Key="rule_builder_pages_count_field_hint">Ім'я класу розбивки на сторінки</clr:String>
+    <clr:String x:Key="rule_builder_document_name_regex_hint">Формат імені документа</clr:String>
+    <clr:String x:Key="rule_builder_add_field_button_text">Добавити поле</clr:String>
+    <clr:String x:Key="rule_builder_successful_creation">Правило створено</clr:String>
+
+    <clr:String x:Key="rule_builder_preview_title_hint">Попередній перегляд</clr:String>
+    <clr:String x:Key="rule_builder_preview_url_title">Загальний URL</clr:String>
+    <clr:String x:Key="rule_builder_preview_document_name_title">Формат імені документа</clr:String>
+    <clr:String x:Key="rule_builder_class_field_title">Поле класу</clr:String>
+
+    <clr:String x:Key="empty_rules_message">Вибачте, але недавно правила не створювалися</clr:String>
+    <clr:String x:Key="start_menu_item_text">Почати</clr:String>
+    <clr:String x:Key="edit_menu_item_text">Редагувати</clr:String>
+    <clr:String x:Key="delete_menu_item_text">Видалити</clr:String>
+    <clr:String x:Key="edit_rule_title">Редактор правила</clr:String>
+
+    <clr:String x:Key="page_word">Сторінка</clr:String>
+    <clr:String x:Key="rule_worker_canceled_error">Завдання правила скасовано.</clr:String>
+    <clr:String x:Key="rule_worker_state_start">Завдання правила запущено.</clr:String>
+    <clr:String x:Key="rule_worker_state_page_ready">Сторінка (и) готова.</clr:String>
+    <clr:String x:Key="rule_worker_state_success">Документ створений. Натисніть тут, щоб продовжити.</clr:String>
+
+    <clr:String x:Key="history_category_title">Категорія</clr:String>
+    <clr:String x:Key="history_category_document_name_title">Назва документу</clr:String>
+    <clr:String x:Key="history_category_date_title">Дата</clr:String>
+    <clr:String x:Key="history_value_title">Значення</clr:String>
+
+    <clr:String x:Key="download_worker_start_message">Завантаження почалося.</clr:String>
+    <clr:String x:Key="download_worker_success_message">Завантаження успішна. Натисніть, щоб продовжити.</clr:String>
+    <clr:String x:Key="empty_history_message">Вибачте, але останнім часом документи не створювалися</clr:String>
+
+    <clr:String x:Key="settings_theme">Темна тема</clr:String>
+    <clr:String x:Key="settings_language">Мова</clr:String>
+    <clr:String x:Key="logout">Вийти з акаунту</clr:String>
+
+</ResourceDictionary>

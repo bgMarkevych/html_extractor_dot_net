@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:html_exctractor.Resources">
+
+    <clr:String x:Key="app_name">HTML field extractor</clr:String>
+    <clr:String x:Key="splash_text">Build rules with our rule builder, and collect data.</clr:String>
+    <clr:String x:Key="copyright_text">specially for Vania Humeniuk (c)</clr:String>
+
+
+    <clr:String x:Key="login_button_text">Sign In</clr:String>
+    <clr:String x:Key="login_small_title_text_part_first">New here?</clr:String>
+    <clr:String x:Key="login_small_title_text_part_second">Create an acoount.</clr:String>
+    <clr:String x:Key="login_big_title_text">Welcome again!</clr:String>
+    <clr:String x:Key="login_google_button_text">Sign in with Google</clr:String>
+    <clr:String x:Key="login_bottom_text">Forgot your password?</clr:String>
+
+    <clr:String x:Key="enter_email_error">Enter email into field</clr:String>
+    <clr:String x:Key="check_email_message">Check your mail box</clr:String>
+
+    <clr:String x:Key="registration_button_text">Sign up</clr:String>
+    <clr:String x:Key="registration_small_title_text">Start quickly</clr:String>
+    <clr:String x:Key="registration_big_title_text">Create an account</clr:String>
+    <clr:String x:Key="registration_google_button_text">Sign up with Google</clr:String>
+    <clr:String x:Key="registration_bottom_text">Already have an account?</clr:String>
+
+    <clr:String x:Key="email_hint_text">Your Email</clr:String>
+    <clr:String x:Key="password_hint_text">Your Password</clr:String>
+
+    <clr:String x:Key="email_validation_error_text">Email invalid</clr:String>
+    <clr:String x:Key="empty_field_validation_error_text">Field empty</clr:String>
+    <clr:String x:Key="search_hint">Search</clr:String>
+    <clr:String x:Key="save">Save</clr:String>
+
+    <clr:String x:Key="rule_builder_title_hint">Rule Buillder</clr:String>
+    <clr:String x:Key="rule_builder_name_hint">Rule name</clr:String>
+    <clr:String x:Key="rule_builder_url_hint">Rule url</clr:String>
+    <clr:String x:Key="rule_builder_pagination_hint">Pagination</clr:String>
+    <clr:String x:Key="rule_builder_pagination_suffics_hint">Pagination suffics</clr:String>
+    <clr:String x:Key="rule_builder_pages_count_field_hint">Rule pages class name</clr:String>
+    <clr:String x:Key="rule_builder_document_name_regex_hint">Document Name Regex</clr:String>
+    <clr:String x:Key="rule_builder_add_field_button_text">Add Field</clr:String>
+    <clr:String x:Key="rule_builder_successful_creation">Rule created</clr:String>
+
+    <clr:String x:Key="rule_builder_preview_title_hint">Preview</clr:String>
+    <clr:String x:Key="rule_builder_preview_url_title">General URL</clr:String>
+    <clr:String x:Key="rule_builder_preview_document_name_title">Document name regex</clr:String>
+    <clr:String x:Key="rule_builder_class_field_title">Class field</clr:String>
+
+    <clr:String x:Key="empty_rules_message">Sorry, but no rules were recently created</clr:String>
+    <clr:String x:Key="start_menu_item_text">Start</clr:String>
+    <clr:String x:Key="edit_menu_item_text">Edit</clr:String>
+    <clr:String x:Key="delete_menu_item_text">Delete</clr:String>
+    <clr:String x:Key="edit_rule_title">Edit Rule</clr:String>
+
+    <clr:String x:Key="page_word">Page</clr:String>
+    <clr:String x:Key="rule_worker_canceled_error">Rule task is canceled.</clr:String>
+    <clr:String x:Key="rule_worker_state_start">Rule task is started.</clr:String>
+    <clr:String x:Key="rule_worker_state_page_ready">Page(s) ready.</clr:String>
+    <clr:String x:Key="rule_worker_state_success">Document creeated. Click here to proceed.</clr:String>
+
+    <clr:String x:Key="history_category_title">Category</clr:String>
+    <clr:String x:Key="history_category_document_name_title">Document Name</clr:String>
+    <clr:String x:Key="history_category_date_title">Date</clr:String>
+    <clr:String x:Key="history_category_name_title">Category</clr:String>
+    <clr:String x:Key="history_value_title">Value</clr:String>
+
+    <clr:String x:Key="download_worker_start_message">Download started.</clr:String>
+    <clr:String x:Key="download_worker_success_message">Downloaded successfully. Click to proceed.</clr:String>
+    <clr:String x:Key="empty_history_message">Sorry, but no documents were recently created</clr:String>
+
+    <clr:String x:Key="settings_theme">Dark Theme</clr:String>
+    <clr:String x:Key="settings_language">Language</clr:String>
+    <clr:String x:Key="logout">Logout</clr:String>
+
+</ResourceDictionary>

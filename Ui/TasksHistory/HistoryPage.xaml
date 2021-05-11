@@ -1,0 +1,67 @@
+﻿<Page x:Class="html_exctractor.Ui.TasksHistory.HistoryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:html_exctractor.Ui.TasksHistory"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:model="clr-namespace:html_exctractor.Model"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Background="{DynamicResource main_first_color}"
+      Title="HistoryPage">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:CallMethodAction TargetObject="{Binding}"
+                                MethodName="PageLoaded" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Page.DataContext>
+        <local:HistoryViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <Rectangle Width="1"
+                   HorizontalAlignment="Right"
+                   Fill="{DynamicResource views_border_color}"
+                   Margin="0 20" />
+        <StackPanel Visibility="{Binding IsHistoriesEmpty, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Border CornerRadius="20"
+                    Width="180"
+                    Height="180"
+                    Background="{DynamicResource empty_rules_container_background}">
+                <Image Width="100"
+                       Height="100"
+                       Source="/Resources/Images/empty_history.png" />
+            </Border>
+            <TextBlock Margin="0 20"
+                       FontSize="16"
+                       Foreground="{DynamicResource text_main_color}"
+                       FontFamily="{StaticResource MaterialDesignFont}"
+                       Text="{DynamicResource empty_history_message}" />
+        </StackPanel>
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ItemContainerStyle="{StaticResource HistoryListBoxItemStyle}"
+                  ItemsPanel="{StaticResource GridTemplateContainer}"
+                  ItemsSource="{Binding Histories}"
+                  Background="Transparent"
+                  BorderBrush="Transparent" />
+        <Button Content="{md:PackIcon Kind=ClearBox,Size=20}"
+                Style="{StaticResource MaterialDesignFloatingActionButton}"
+                Background="{DynamicResource main_second_color}"
+                Command="{Binding ClearHistoryCommand}"
+                BorderBrush="Transparent"
+                Margin="24"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                ToolTip="Clear History"
+                Cursor="Hand" />
+    </Grid>
+</Page>

@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:html_exctractor.Resources">
+
+    <clr:String x:Key="app_name">HTML field extractor</clr:String>
+    <clr:String x:Key="splash_text">Создавайте правила с помощью нашего конструктора правил и собирайте данные.</clr:String>
+    <clr:String x:Key="copyright_text">специально для Вани Гуменюка (с)</clr:String>
+
+
+    <clr:String x:Key="login_button_text">Войти</clr:String>
+    <clr:String x:Key="login_small_title_text_part_first">Новенький тут?</clr:String>
+    <clr:String x:Key="login_small_title_text_part_second">Завести аккаунт.</clr:String>
+    <clr:String x:Key="login_big_title_text">Добро пожаловать снова!</clr:String>
+    <clr:String x:Key="login_google_button_text">Войти через Google</clr:String>
+    <clr:String x:Key="login_bottom_text">Забыли Ваш пароль?</clr:String>
+
+    <clr:String x:Key="enter_email_error">Введите адрес электронной почты в поле</clr:String>
+    <clr:String x:Key="check_email_message">Проверьте свой почтовый ящик</clr:String>
+
+    <clr:String x:Key="registration_button_text">Зарегистрироваться</clr:String>
+    <clr:String x:Key="registration_small_title_text">Начать быстро</clr:String>
+    <clr:String x:Key="registration_big_title_text">Завести аккаунт</clr:String>
+    <clr:String x:Key="registration_google_button_text">Зарегистрироваться через Google</clr:String>
+    <clr:String x:Key="registration_bottom_text">Уже есть аккаунт?</clr:String>
+
+    <clr:String x:Key="email_hint_text">Ваш адрес электронной почты</clr:String>
+    <clr:String x:Key="password_hint_text">Ваш пароль</clr:String>
+
+    <clr:String x:Key="email_validation_error_text">Электронная почта недействительна</clr:String>
+    <clr:String x:Key="empty_field_validation_error_text">Поле пустое</clr:String>
+    <clr:String x:Key="search_hint">Поиск</clr:String>
+    <clr:String x:Key="save">Сохранить</clr:String>
+
+    <clr:String x:Key="rule_builder_title_hint">Построитель правила</clr:String>
+    <clr:String x:Key="rule_builder_name_hint">Имя правила</clr:String>
+    <clr:String x:Key="rule_builder_url_hint">URL правила</clr:String>
+    <clr:String x:Key="rule_builder_pagination_hint">Разбивка на страницы</clr:String>
+    <clr:String x:Key="rule_builder_pagination_suffics_hint">Суффикс разбивки на страницы</clr:String>
+    <clr:String x:Key="rule_builder_pages_count_field_hint">Имя класса разбивки на страницы</clr:String>
+    <clr:String x:Key="rule_builder_document_name_regex_hint">Формат имени документа</clr:String>
+    <clr:String x:Key="rule_builder_add_field_button_text">Добавить поле</clr:String>
+    <clr:String x:Key="rule_builder_successful_creation">Правило создано</clr:String>
+
+    <clr:String x:Key="rule_builder_preview_title_hint">Предварительный просмотр</clr:String>
+    <clr:String x:Key="rule_builder_preview_url_title">Общий URL</clr:String>
+    <clr:String x:Key="rule_builder_preview_document_name_title">Формат имени документа</clr:String>
+    <clr:String x:Key="rule_builder_class_field_title">Поле класса</clr:String>
+
+    <clr:String x:Key="empty_rules_message">Извините, но недавно правила не создавались</clr:String>
+    <clr:String x:Key="start_menu_item_text">Начать</clr:String>
+    <clr:String x:Key="edit_menu_item_text">Редактировать</clr:String>
+    <clr:String x:Key="delete_menu_item_text">Удалить</clr:String>
+    <clr:String x:Key="edit_rule_title">Редактор правила</clr:String>
+
+    <clr:String x:Key="page_word">Страница</clr:String>
+    <clr:String x:Key="rule_worker_canceled_error">Задача правила отменена.</clr:String>
+    <clr:String x:Key="rule_worker_state_start">Задача правила запущена.</clr:String>
+    <clr:String x:Key="rule_worker_state_page_ready">Страница (и) готова.</clr:String>
+    <clr:String x:Key="rule_worker_state_success">Документ создан. Нажмите здесь, чтобы продолжить.</clr:String>
+
+    <clr:String x:Key="history_category_title">Категория</clr:String>
+    <clr:String x:Key="history_category_document_name_title">Название документа</clr:String>
+    <clr:String x:Key="history_category_date_title">Дата</clr:String>
+    <clr:String x:Key="history_value_title">Значение</clr:String>
+
+    <clr:String x:Key="download_worker_start_message">Скачивание началось.</clr:String>
+    <clr:String x:Key="download_worker_success_message">Загрузка успешна. Нажмите, чтобы продолжить.</clr:String>
+    <clr:String x:Key="empty_history_message">Извините, но в последнее время документы не создавались</clr:String>
+
+    <clr:String x:Key="settings_theme">Темная тема</clr:String>
+    <clr:String x:Key="settings_language">Язык</clr:String>
+    <clr:String x:Key="logout">Выйти из аккаунта</clr:String>
+
+</ResourceDictionary>
